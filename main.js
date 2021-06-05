@@ -1,9 +1,8 @@
 import Receptor from "./receptor.js";
 import Estructurador from "./estructurador.js";
 
- 
 console.log("Prueba");
-let r1 = new Receptor(2, 0, 0, 0, 0, 0, 3, 1, 4, 1, 23, 1, 3, 4);
+let r1 = new Receptor(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 3, 4);
 let e1 = new Estructurador(r1);
 
 console.log(r1.getNX5());
@@ -24,7 +23,9 @@ console.log(r1.getSegmentos());
 
 console.log("Estructurador");
 console.log(e1.formarFormula(r1));
-console.log(e1.clacularPendiente(r1));
+console.log(e1.clacularPendiente(r1)); 
+console.log(e1.tablaX(r1));
+console.log(e1.formarFormulaFuncional(r1));
 
 
 

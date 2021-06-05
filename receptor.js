@@ -17,7 +17,7 @@ export default class Receptor{
     }
 
     getNX5(){
-        return this._nX5;
+        return this._nX5; 
     }
 
     getNX4(){
