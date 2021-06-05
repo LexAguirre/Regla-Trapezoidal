@@ -26,6 +26,11 @@ console.log(e1.formarFormula(r1));
 console.log(e1.clacularPendiente(r1)); 
 console.log(e1.tablaX(r1));
 console.log(e1.formarFormulaFuncional(r1));
+//console.log(e1._estX5(r1), "hola");
+console.log(e1.formIntegralA(r1));
+console.log(e1.formIntegralB(r1));
+console.log(e1.primeraIntegral(r1));
+console.log(e1.diseñoIntegral(r1));
 
 
 

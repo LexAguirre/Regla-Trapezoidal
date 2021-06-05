@@ -1,3 +1,5 @@
+'use strict';
+
 export default class Estructurador{
  
     constructor(){
@@ -32,10 +34,8 @@ export default class Estructurador{
 
     tablaX(receptor){
         let espacio = this._Altura(receptor);
-        console.log(espacio);
         let A = receptor.getA();
         let B = receptor.getB();
-        console.log(A, B);
 
             for (let i = A; i <= B; i = i + espacio){
                 this._vectorX.push(i);
@@ -98,11 +98,165 @@ export default class Estructurador{
         return this._vectorFX;
     }
 
-    formarFormulaIntegralVisual(receptor){
+    formIntegralA(receptor){
+        let A = receptor.getA();
+        let x5;
+        let x4;
+        let x3;
+        let x2;
+        let x1;
 
+        if (receptor.getX5() === "x⁵"){
+            x5 = (receptor.getNX5() * (Math.pow(A, 6))) / 6 ;
+        } else {
+            x5 = 0;
+        }
+
+        if (receptor.getX4() === "x⁴"){
+            x4 = (receptor.getNX4() * (Math.pow(A, 5))) / 5 ;
+        } else {
+            x4 = 0;
+        }
+
+        if (receptor.getX3() === "x³"){
+            x3 = (receptor.getNX3() * (Math.pow(A, 4))) / 4 ;
+        } else {
+            x3 = 0;
+        }
+
+        if (receptor.getX2() === "x²"){
+            x2 = (receptor.getNX2() * (Math.pow(A, 3))) / 3 ;
+        } else {
+            x2 = 0;
+        }
+
+        if (receptor.getX1() === "x"){
+            x1 = (receptor.getNX1() * (Math.pow(A, 2))) / 2 ;
+        } else {
+            x1 = 0;
+        }
+
+        let integralA = x5 + x4 + x3 + x2 + x1 + (receptor.getConstante() * A);
+
+        return integralA
     }
 
+    formIntegralB(receptor){
+        let B = receptor.getB();
+        let x5;
+        let x4;
+        let x3;
+        let x2;
+        let x1;
 
+        if (receptor.getX5() === "x⁵"){
+            x5 = (receptor.getNX5() * (Math.pow(B, 6))) / 6 ;
+        } else {
+            x5 = 0;
+        }
+
+        if (receptor.getX4() === "x⁴"){
+            x4 = (receptor.getNX4() * (Math.pow(B, 5))) / 5 ;
+        } else {
+            x4 = 0;
+        }
+
+        if (receptor.getX3() === "x³"){
+            x3 = (receptor.getNX3() * (Math.pow(B, 4))) / 4 ;
+        } else {
+            x3 = 0;
+        }
+
+        if (receptor.getX2() === "x²"){
+            x2 = (receptor.getNX2() * (Math.pow(B, 3))) / 3 ;
+        } else {
+            x2 = 0;
+        }
+
+        if (receptor.getX1() === "x"){
+            x1 = (receptor.getNX1() * (Math.pow(B, 2))) / 2 ;
+        } else {
+            x1 = 0;
+        }
+
+        let integralB = x5 + x4 + x3 + x2 + x1 + (receptor.getConstante() * B);
+
+        return integralB
+    }
+
+    primeraIntegral(receptor){
+        let integral = this.formIntegralB(receptor) - this.formIntegralA(receptor);
+        return integral
+    }
+
+    diseñoIntegral(receptor){
+        
+        let x5;
+        let x4;
+        let x3;
+        let x2;
+        let x1;
+        let xC
+        
+        if (receptor.getX5() === "x⁵"){
+            x5 = "(" + (receptor.getNX5() + ' * ' + "x⁶") + " / " + "6)";
+        } else {
+            x5 = "(" + (receptor.getNX5() + ' * ' + "0⁶") + " / " + "6)";
+        }
+
+        if (receptor.getX4() === "x⁴"){
+            x4 = "(" + (receptor.getNX4() + ' * ' + "x⁵") + " / " + "5)";
+        } else {
+            x4 = "(" + (receptor.getNX4() + ' * ' + "0⁵") + " / " + "5)";
+        }
+
+        if (receptor.getX3() === "x³"){
+            x3 = "(" + (receptor.getNX3() + ' * ' + "x⁴") + " / " + "4)";
+        } else {
+            x3 = "(" + (receptor.getNX3() + ' * ' + "0⁴") + " / " + "4)";
+        }
+
+        if (receptor.getX2() === "x²"){
+            x2 = "(" + (receptor.getNX2() + ' * ' + "x³") + " / " + "3)";
+        } else {
+            x2 = "(" + (receptor.getNX2() + ' * ' + "0³") + " / " + "3)";
+        }
+
+        if (receptor.getX1() === "x"){
+            x1 = "(" + (receptor.getNX1() + ' * ' + "x²") + " / " + "2)";
+        } else {
+            x1 = "(" + (receptor.getNX1() + ' * ' + "0²") + " / " + "2)";
+        }
+
+        if (receptor.getConstante() === 0){
+            xC = ('('+receptor.getConstante() + '*' + "0)");
+        } else {
+            xC = ('('+receptor.getConstante() + '*' + "x)");
+        }
+
+        let formulaIntegral = x5 + ' + ' + x4 + ' + ' + x3 + ' + ' + x2 + ' + ' + x1 + ' + ' + xC; 
+        return formulaIntegral
+    }
+/*
+    _estX5(receptor){
+        let A = receptor.getA();
+        let x5;
+
+        if (receptor.getX5() === "x⁵"){
+            x5 = (receptor.getNX5() + ' * ' + "x⁶") / "6" ;
+            console.log(x5)
+        } else {
+            x5 = "(" + (receptor.getNX5() + ' * ' + "0⁶") + " / " + "6)";
+            console.log(x5);
+        }
+
+        if (receptor.getX5() === "x⁵"){
+            x5 = (receptor.getNX5() * (Math.pow(A, 6))) / 6 ;
+            return x5;
+        } else {
+            return 0;
+        }
+    }*/
 
 
 
