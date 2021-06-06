@@ -196,7 +196,7 @@ export default class Estructurador{
         let x3;
         let x2;
         let x1;
-        let xC
+        let xC;
         
         if (receptor.getX5() === "x⁵"){
             x5 = "(" + (receptor.getNX5() + ' * ' + "x⁶") + " / " + "6)";
@@ -237,30 +237,32 @@ export default class Estructurador{
         let formulaIntegral = x5 + ' + ' + x4 + ' + ' + x3 + ' + ' + x2 + ' + ' + x1 + ' + ' + xC; 
         return formulaIntegral
     }
-/*
-    _estX5(receptor){
+
+    ecuacionI(receptor){
+        let arrayFX = this._vectorFX;
+        let suma = 0;
+        let final = 0;
+        let segmentos = receptor.getSegmentos();
+        let I;
         let A = receptor.getA();
-        let x5;
+        let B = receptor.getB();
+        let ultimo = arrayFX[arrayFX.length -1]
+        console.log(ultimo)
 
-        if (receptor.getX5() === "x⁵"){
-            x5 = (receptor.getNX5() + ' * ' + "x⁶") / "6" ;
-            console.log(x5)
-        } else {
-            x5 = "(" + (receptor.getNX5() + ' * ' + "0⁶") + " / " + "6)";
-            console.log(x5);
+        for (let i = 1; i < arrayFX.length - 1; i++){
+            suma += arrayFX[i]
         }
 
-        if (receptor.getX5() === "x⁵"){
-            x5 = (receptor.getNX5() * (Math.pow(A, 6))) / 6 ;
-            return x5;
-        } else {
-            return 0;
-        }
-    }*/
+        I = ((B - A) * (arrayFX[0] + 2*(suma) + (ultimo))) / ((2) * (segmentos));
+        
+        return I;
+    }
 
-
-
-
+    calcularER(receptor){
+        let errorPorcentual = ((this.primeraIntegral(receptor) - this.ecuacionI(receptor)) / this.primeraIntegral(receptor)) * 100;
+        
+        return Math.abs(errorPorcentual.toFixed(2));
+    }
 
     add(receptor){
         this._estructura.push(receptor);

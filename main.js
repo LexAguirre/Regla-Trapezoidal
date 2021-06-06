@@ -1,6 +1,6 @@
 import Receptor from "./receptor.js";
 import Estructurador from "./estructurador.js";
-
+/*
 console.log("Prueba");
 let r1 = new Receptor(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 3, 4);
 let e1 = new Estructurador(r1);
@@ -31,18 +31,64 @@ console.log(e1.formIntegralA(r1));
 console.log(e1.formIntegralB(r1));
 console.log(e1.primeraIntegral(r1));
 console.log(e1.diseñoIntegral(r1));
+console.log(e1.ecuacionI(r1));
+console.log(e1.calcularER(r1));
+console.log(e1.add(r1));
+*/
+class App{
+    constructor(){ 
+        this.btnRegister = document.querySelector("#btnRegister");
+        btnRegister.addEventListener("click", this.readForm);
+        this._table = document.querySelector('#tableGrades');
+        this._estructura = new Estructurador();
+    }
 
+    readForm = () => {
+        let receptor = Receptor.readForm();
+    
+        if(receptor === false){
+            Swal.fire(
+                'Error',
+                'Es nesesario colocar las letras A y B ademas de los segmentos',
+                'error'
+              );
+              return;
+        }
 
+        let completado = this._estructura.add(receptor);
+        console.log(this._estructura);
+        
+        this._printInTable(receptor);
+            Swal.fire(
+                'Bien!',
+                'Ecuación Registrada',
+                'success'
+              )
 
+    }
 
+    _printInTable(receptor){
+        let row = this._table.insertRow(1);
 
+        let colFormula = row.insertCell(0);
+        let colAltura = row.insertCell(1);
+        let colIntegral = row.insertCell(2);
+        let colIntegralI = row.insertCell(3);
+        let colI = row.insertCell(4);
+        let colEr = row.insertCell(5);
 
+        colFormula.innerHTML = this._estructura.formarFormula(receptor);
+        colAltura.innerHTML = this._estructura.clacularPendiente(receptor);
+        colIntegral.innerHTML = this._estructura.diseñoIntegral(receptor);
+        colIntegralI.innerHTML = this._estructura.primeraIntegral(receptor);
+        colI.innerHTML = this._estructura.ecuacionI(receptor);
+        colEr.innerHTML = this._estructura.calcularER(receptor);
 
+    }
 
+}
 
-
-
-
+new App();
 
 
 /*
