@@ -1,7 +1,13 @@
 import Receptor from "./receptor.js";
 import Estructurador from "./estructurador.js";
-/*
+
 console.log("Prueba");
+
+/*
+let r1 = new Receptor();
+let e1 = new Estructurador(r1);
+
+
 let r1 = new Receptor(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 3, 4);
 let e1 = new Estructurador(r1);
 
@@ -58,7 +64,7 @@ class App{
         let completado = this._estructura.add(receptor);
         console.log(this._estructura);
         
-        this._printInTable(receptor);
+        this._printResolution(receptor);
             Swal.fire(
                 'Bien!',
                 'Ecuación Registrada',
@@ -67,67 +73,17 @@ class App{
 
     }
 
-    _printInTable(receptor){
-        let row = this._table.insertRow(1);
+    _printResolution(receptor){
 
-        let colFormula = row.insertCell(0);
-        let colAltura = row.insertCell(1);
-        let colIntegral = row.insertCell(2);
-        let colIntegralI = row.insertCell(3);
-        let colI = row.insertCell(4);
-        let colEr = row.insertCell(5);
-
-        colFormula.innerHTML = this._estructura.formarFormula(receptor);
-        colAltura.innerHTML = this._estructura.clacularPendiente(receptor);
-        colIntegral.innerHTML = this._estructura.diseñoIntegral(receptor);
-        colIntegralI.innerHTML = this._estructura.primeraIntegral(receptor);
-        colI.innerHTML = this._estructura.ecuacionI(receptor);
-        colEr.innerHTML = this._estructura.calcularER(receptor);
+        document.getElementById("colFormula").innerHTML = this._estructura.formarFormula(receptor);
+        document.getElementById("colAltura").innerHTML = this._estructura.clacularPendiente(receptor);
+        document.getElementById("colIntegral").innerHTML = this._estructura.diseñoIntegral(receptor);
+        document.getElementById("colIntegralI").innerHTML = this._estructura.primeraIntegral(receptor);
+        document.getElementById("colI").innerHTML = this._estructura.ecuacionI(receptor);
+        document.getElementById("colEr").innerHTML = this._estructura.calcularER(receptor);
 
     }
 
 }
 
 new App();
-
-
-/*
-let numIteracion = (5-1) / 2;
-console.log(numIteracion)
-
-let x0 = 0;
-let x1 = 1;
-
-let xr1 = (x1 + x0) / 2
-
-console.log("Primera Iteración");
-console.log(xr1);
-console.log(x0 = x1);
-console.log(x1 = xr1);
-
-for(let i = 0; i < numIteracion; i++) {
-    
-    console.log("Iterracion");
-    let xr2 = (x1 + x0) / 2
-
-    console.log(xr2);
-    console.log(x0 = xr1);
-    console.log(x1 = xr2);
-    
-
-    let xr2 = (x1 + x0) / 2
-
-console.log("Segunda Iteración");
-console.log(xr2);
-console.log(x1 = xr2);
-console.log(x0 = xr1);
-
-xr1 = (x1 + x0) / 2
-
-console.log("tercera Iteración");
-console.log(xr1);
-console.log(x1 = xr2);
-console.log(x0 = xr1);
-}
-
-*/

@@ -1,4 +1,9 @@
+function limpear() {
+        document.getElementById('Interpolacion').reset();
+}
+    
 export default class Receptor{
+    
     constructor(nX5, x5, nX4, x4, nX3, x3, nX2, x2, nX1, x1, constante, a, b, segmentos){
         this._nX5 = nX5;
         this._x5 = x5;
@@ -114,15 +119,15 @@ export default class Receptor{
         let inpSegmentos = document.querySelector("#segmentos");
         
         let nX5 = Number(inpNX5.value); 
-        let x5 = inpX5.value;
+        let x5 = Number(inpX5.value);
         let nX4 = Number(inpNX4.value);
-        let x4 = inpX4.value;
+        let x4 = Number(inpX4.value);
         let nX3 = Number(inpNX3.value);
-        let x3 = inpX3.value;
+        let x3 = Number(inpX3.value);
         let nX2 = Number(inpNX2.value);
-        let x2 = inpX2.value;
+        let x2 = Number(inpX2.value);
         let nX1 = Number(inpNX1.value);
-        let x1 = inpX1.value;
+        let x1 = Number(inpX1.value);
         let constante = Number(inpConstante.value);
         let A = Number(inpA.value);
         let B = Number(inpB.value);
@@ -130,18 +135,13 @@ export default class Receptor{
 
         if(A && B && segmentos){
             if(nX5 || x5 || nX4 || x4 || nX3 || x3 || nX2 || x2 || nX1 || x1 || constante){
-                let ecuacion = new Receptor(A, B, segmentos, nX5, x5, nX4, x4, nX3, x3, nX2, x2, nX1, x1, constante);
+                let ecuacion = new Receptor(nX5, x5, nX4, x4, nX3, x3, nX2, x2, nX1, x1, constante, A, B, segmentos);
             
                 inpNX5.value = '';
-                inpX5.value = '';
                 inpNX4.value = '';
-                inpX4.value = '';
                 inpNX3.value = '';
-                inpX3.value = '';
                 inpNX2.value = '';
-                inpX2.value = '';
                 inpNX1.value = '';
-                inpX1.value = '';
                 inpConstante.value = '';
                 inpA.value = '';
                 inpB.value = '';

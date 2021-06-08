@@ -12,8 +12,6 @@ export default class Estructurador{
         
         let formula = `${receptor.getNX5() + '*' +  receptor.getX5()} + ${receptor.getNX4() + '*' + receptor.getX4()} + ${receptor.getNX3() + '*' + receptor.getX3()} + ${receptor.getNX2() + '*' + receptor.getX2()} + ${receptor.getNX1() + '*' + receptor.getX1()} + ${receptor.getConstante()}`;
 
-        
-
         return formula;
 
     }
@@ -34,15 +32,19 @@ export default class Estructurador{
 
     tablaX(receptor){
         let espacio = this._Altura(receptor);
+        console.log(espacio);
         let A = receptor.getA();
+        console.log(A);
         let B = receptor.getB();
+        console.log(B);
 
             for (let i = A; i <= B; i = i + espacio){
                 this._vectorX.push(i);
             }
+        console.log(this._vectorX);
 
         return this._vectorX;
-
+        
     }
 
     formarFormulaFuncional(receptor){
@@ -53,12 +55,12 @@ export default class Estructurador{
         let x2;
         let x1;
         let x;
-        //console.log(this._vectorX);
+        console.log(this._vectorX);
 
         for (let i = 0; i < this._vectorX.length; i++){
 
             x = this._vectorX[i];
-            //console.log(x);
+            console.log(x);
 
             if (receptor.getX5() === "x⁵"){
                 x5 = Math.pow(x, 5);
@@ -137,8 +139,9 @@ export default class Estructurador{
         }
 
         let integralA = x5 + x4 + x3 + x2 + x1 + (receptor.getConstante() * A);
-
+        
         return integralA
+        
     }
 
     formIntegralB(receptor){
@@ -180,13 +183,14 @@ export default class Estructurador{
         }
 
         let integralB = x5 + x4 + x3 + x2 + x1 + (receptor.getConstante() * B);
-
+        
         return integralB
+        
     }
 
     primeraIntegral(receptor){
         let integral = this.formIntegralB(receptor) - this.formIntegralA(receptor);
-        return integral
+        return integral;
     }
 
     diseñoIntegral(receptor){
@@ -240,18 +244,18 @@ export default class Estructurador{
 
     ecuacionI(receptor){
         let arrayFX = this._vectorFX;
+        //console.log(arrayFX);
         let suma = 0;
-        let final = 0;
         let segmentos = receptor.getSegmentos();
         let I;
         let A = receptor.getA();
         let B = receptor.getB();
         let ultimo = arrayFX[arrayFX.length -1]
-        console.log(ultimo)
 
         for (let i = 1; i < arrayFX.length - 1; i++){
             suma += arrayFX[i]
         }
+        //console.log(suma);
 
         I = ((B - A) * (arrayFX[0] + 2*(suma) + (ultimo))) / ((2) * (segmentos));
         
@@ -260,6 +264,7 @@ export default class Estructurador{
 
     calcularER(receptor){
         let errorPorcentual = ((this.primeraIntegral(receptor) - this.ecuacionI(receptor)) / this.primeraIntegral(receptor)) * 100;
+        //console.log(this.ecuacionI(receptor))
         
         return Math.abs(errorPorcentual.toFixed(2));
     }
