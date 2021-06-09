@@ -1,9 +1,3 @@
-![Logo UCOL](img/ucol-logo.jpg)
-
-![Portada](img/cover.jpg)
-
-> Moremi Game Reserve, Botswana. Photo by <a href="https://unsplash.com/@chrisstenger?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Chris Stenger</a> on <a href="https://unsplash.com/t/animals?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
 # Examen DOM: Receta de Cocina
 
 El objetivo de este ejercicio es evaluar la interacción con HTML utilizando la api DOM de javascript
