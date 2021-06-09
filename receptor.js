@@ -1,6 +1,4 @@
-function limpear() {
-        document.getElementById('Interpolacion').reset();
-}
+
     
 export default class Receptor{
     

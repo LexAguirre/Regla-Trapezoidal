@@ -4,8 +4,8 @@ export default class Estructurador{
  
     constructor(){
         this._estructura = new Array();
-        this._vectorX = new Array();
-        this._vectorFX = new Array();
+        //this._vectorX = new Array();
+        //this._vectorFX = new Array();
     }
 
     formarFormula(receptor){
@@ -31,6 +31,7 @@ export default class Estructurador{
     }
 
     tablaX(receptor){
+        let vectorX = [];
         let espacio = this._Altura(receptor);
         console.log(espacio);
         let A = receptor.getA();
@@ -39,27 +40,27 @@ export default class Estructurador{
         console.log(B);
 
             for (let i = A; i <= B; i = i + espacio){
-                this._vectorX.push(i);
-            }
-        console.log(this._vectorX);
+                vectorX.push(i);
+            };
 
-        return this._vectorX;
+        return vectorX;
         
     }
 
     formarFormulaFuncional(receptor){
         
+        let vectorX = this.tablaX(receptor);
+        let vectorFX = [];
         let x5;
         let x4;
         let x3;
         let x2;
         let x1;
         let x;
-        console.log(this._vectorX);
 
-        for (let i = 0; i < this._vectorX.length; i++){
+        for (let i = 0; i < vectorX.length; i++){
 
-            x = this._vectorX[i];
+            x = vectorX[i];
             console.log(x);
 
             if (receptor.getX5() === "x⁵"){
@@ -94,10 +95,10 @@ export default class Estructurador{
 
             let formula = (receptor.getNX5() * (x5)) + (receptor.getNX4() * (x4)) + (receptor.getNX3() * (x3)) + (receptor.getNX2() * (x2)) + (receptor.getNX1() * (x1)) + (receptor.getConstante());
         
-            this._vectorFX.push(formula);
+            vectorFX.push(formula);
         }
 
-        return this._vectorFX;
+        return vectorFX;
     }
 
     formIntegralA(receptor){
@@ -243,7 +244,7 @@ export default class Estructurador{
     }
 
     ecuacionI(receptor){
-        let arrayFX = this._vectorFX;
+        let arrayFX = this.formarFormulaFuncional(receptor);
         //console.log(arrayFX);
         let suma = 0;
         let segmentos = receptor.getSegmentos();

@@ -1,6 +1,10 @@
 import Receptor from "./receptor.js";
 import Estructurador from "./estructurador.js";
 
+function limpear() {
+    document.getElementById('Interpolacion').reset();
+}
+
 console.log("Prueba");
 
 /*
@@ -78,9 +82,9 @@ class App{
         document.getElementById("colFormula").innerHTML = this._estructura.formarFormula(receptor);
         document.getElementById("colAltura").innerHTML = this._estructura.clacularPendiente(receptor);
         document.getElementById("colIntegral").innerHTML = this._estructura.diseñoIntegral(receptor);
-        document.getElementById("colIntegralI").innerHTML = this._estructura.primeraIntegral(receptor);
-        document.getElementById("colI").innerHTML = this._estructura.ecuacionI(receptor);
-        document.getElementById("colEr").innerHTML = this._estructura.calcularER(receptor);
+        document.getElementById("colIntegralI").innerHTML = this._estructura.primeraIntegral(receptor) + " u²";
+        document.getElementById("colI").innerHTML = this._estructura.ecuacionI(receptor) + " u²";
+        document.getElementById("colEr").innerHTML = this._estructura.calcularER(receptor) + "%";
 
     }
 
