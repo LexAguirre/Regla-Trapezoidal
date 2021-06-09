@@ -9,27 +9,11 @@
   - CATEDRATICO: CORTÉS LUGO HUGO
   - AGUIRRE ROMERO RAMÓN ALEJANDRO
 
-## Requerimientos funcionales
-
-Programar una página web que permita a los usuarios agregar ingredientes a una receta de cocina.
-
-- La página web contará con un formulario que permita al usuario capturar:
-
-  - El nombre del ingrediente
-  - La cantidad
-  - Las unidades de medida, por ejemplo gramos, litros, cucharadas, etc.
-  - El costo del ingrediente en pesos mexicanos.
-  - Calificación de español
-
-- La página web también mostrará una tabla con los siguientes datos:
-
-  - Nombre del ingrediente
-  - Cantidad y unidades juntos, es decir en la misma columna (ver imágen de ejemplo)
-  - Costo del ingrediente
-
-- Al final del listado o tabla se mostrarán el costo total de todos los ingredientes
+## Explicación del Programa
 
 ![Ejemplo](img/ejemplo.png)
+Como observación se tiene que en dado caso que no se vaya a llenar toda la fórmula no es necesario colocar cero ya que de manera automática si no cuenta con un número dentro entonces regresará un cero lo cual al multiplicarse por la variable inevitablemente dará cero.
+además si se busca tener una mayor formalidad en la fórmula en la variable se le puede cambiar a la opción null.
 
 > Ejemplo de la aplicación terminada.
 
