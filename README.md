@@ -1,4 +1,6 @@
-# Examen DOM: Receta de Cocina
+![Ejemplo](img/ucol-logo.jpg)
+
+# Práctica 2: Regla-Trapezoidal
 
 El objetivo de este ejercicio es evaluar la interacción con HTML utilizando la api DOM de javascript
 
