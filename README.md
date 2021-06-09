@@ -11,7 +11,7 @@
 
 ## Explicación del Programa
 
-![Ejemplo](img/ejemplo.png)
+![Ejemplo](img/pantalla-principal.png)
 Como observación se tiene que en dado caso que no se vaya a llenar toda la fórmula no es necesario colocar cero ya que de manera automática si no cuenta con un número dentro entonces regresará un cero lo cual al multiplicarse por la variable inevitablemente dará cero.
 además si se busca tener una mayor formalidad en la fórmula en la variable se le puede cambiar a la opción null.
 
