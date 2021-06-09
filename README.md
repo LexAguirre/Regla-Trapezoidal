@@ -1,8 +1,13 @@
-![Ejemplo](img/ucol-logo.jpg)
+![Logo](img/ucol-logo.jpg)
 
-# Práctica 2: Regla-Trapezoidal
+# Práctica 2: Programación de una calculadora de la Regla-Trapezoidal
 
-El objetivo de este ejercicio es evaluar la interacción con HTML utilizando la api DOM de javascript
+FACULTAD DE TELEMATICA
+INGENIERÍA EN SOFTWARE
+“2ºG”
+MÉTODOS NUMÉRICOS
+CATEDRATICO: CORTÉS LUGO HUGO
+AGUIRRE ROMERO RAMÓN ALEJANDRO
 
 ## Requerimientos funcionales
 
