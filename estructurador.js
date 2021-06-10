@@ -1,7 +1,7 @@
 'use strict';
 
 export default class Estructurador{
- 
+  
     constructor(){
         this._estructura = new Array();
         //this._vectorX = new Array();
