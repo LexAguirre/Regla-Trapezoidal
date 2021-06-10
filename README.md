@@ -23,7 +23,9 @@ además si se busca tener una mayor formalidad en la fórmula en la variable se 
 
 - Al haber completado los datos se presiona al botón `Registrar` para que realice los cálculos o al botón `Limpear Campos` para eliminar todo lo registrado.
 
-> Prueba:
+## Pruebas
+
+> Ejercicio 1
 
 ![Ejemplo](img/Formula-1.png)
 
@@ -31,17 +33,18 @@ además si se busca tener una mayor formalidad en la fórmula en la variable se 
 
 ![Ejemplo](img/Ejercicio-1-Resuelto.png)
 
-## Requerimientos no funcionales
+> Ejercicio 2
 
-- Las clases, métodos y atributos deberán tener el nómbre que se indica y el número y tipo de parámetros que se especifica.
-- Las clases deberán estar encapsuladas.
-- Se deberán utilizar las convenciones de estilo para clases, métodos, atributos, parámetros y variables
+![Ejemplo](img/Formula-2.png)
 
-## Entregable
+- Se prueba los datos de la anterior imagen en el programa y se podra observar como es que si entrega los mismos resultados
 
-- Código fuente en este repositorio
+![Ejemplo](img/Ejercicio-2-Resuelto.png)
 
-## Evaluación
+> Ejercicio 3
 
-- Para que la tarea sea considerada como válida, el repositorio deberá tener por lo menos 1 commit por cada método.
-- Los repositorios que no tengan una historia de commits considerable NO serán considerados como válidos y obtendrán cero como calificación.
+![Ejemplo](img/Formula-3.png)
+
+- Se prueba los datos de la anterior imagen en el programa y se podra observar como es que si entrega los mismos resultados
+
+![Ejemplo](img/Ejercicio-3-Resuelto.png)
